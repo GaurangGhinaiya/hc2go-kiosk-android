@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_3sdp"
+        android:background="@drawable/bg_trans_blue"
+        android:id="@+id/ll_selected_layout"
+        android:gravity="center"
+        android:minHeight="@dimen/_30sdp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_patient_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/inter_regular"
+            android:gravity="center"
+            android:textColor="@color/black_0"
+            android:textSize="@dimen/_11sdp" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

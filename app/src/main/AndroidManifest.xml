@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.kiosk">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:name=".Myapp"
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity
+            android:name=".Project.SignInOut_Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar1" />
+        <activity
+            android:name=".Project.Agree_Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar1" />
+        <activity
+            android:name=".Project.SignIn_Type_Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar2" />
+
+        <activity
+            android:name=".Project.HPSP.HPSP_Type_Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar2" />
+
+        <activity
+            android:name=".Project.Print_complete_Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar1" />
+
+        <activity
+            android:name=".Project.HPSP.HPSP_Using_PhoneNumber_Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar2" />
+
+
+        <activity
+            android:name=".Project.HPSP.HPSP_Using_QuestionAnswer_Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar2" />
+
+        <activity
+            android:name=".Project.HPSP.HPSP_FirstTime_Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar2" />
+
+        <activity
+            android:name=".Project.HPSP.HPSP_EpartmentDetails_Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar2" />
+        <activity
+            android:name=".Project.HPSP.HPSP_VisitElse_Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar2" />
+        <activity
+            android:name=".Project.HPSP.HPSP_PatientList_Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar2" />
+        <activity
+            android:name=".Project.HPSP.HPSP_VehicelsDetails_Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar2" />
+        <activity
+            android:name=".Project.HPSP.HPSP_visitInformation_Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar2" />
+
+        <activity
+            android:name=".Project.FG.FG_EpartmentDetails_Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar2" />
+        <activity
+            android:name=".Project.FG.FG_VisitElse_Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar2" />
+        <activity
+            android:name=".Project.FG.FG_PatientList_Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar2" />
+        <activity
+            android:name=".Project.FG.FG_VehicelsDetails_Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar2" />
+        <activity
+            android:name=".Project.FG.FG_visitInformation_Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar2" />
+        <activity
+            android:name=".Project.FG.FG_Using_PhoneNumber_Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar2" />
+
+
+        <activity
+            android:name=".Project.FG.FG_Type_Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar2" />
+
+        <activity
+            android:name=".Project.FG.FG_FirstTime_Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar2" />
+
+
+        <activity
+            android:name=".Project.FG.FG_pass_Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar3" />
+
+
+        <activity
+            android:name=".Project.Resident.Resident_EpartmentDetails_Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar2" />
+        <activity
+            android:name=".Project.Resident.R_PatientList_Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar2" />
+        <activity
+            android:name=".Project.Resident.R_QuestionAnswer_Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar2" />
+        <activity
+            android:name=".Project.Resident.R_FinalAnswer_Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar2" />
+        <activity
+            android:name=".Project.Resident.R_OnlySignIN_Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar1" />
+
+
+        <activity
+            android:name=".Project.CS.CS_EmployeeId_Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar2" />
+        <activity
+            android:name=".Project.CS.CS_QuestionAnswer_Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar2" />
+
+        <activity
+            android:name=".Project.CS.CS_FinalAnswer_Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar2" />
+        <activity
+            android:name=".Project.CS.CS_signout_Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar2" />
+
+        <activity
+            android:name=".Project.Resident.Resident_List_Signout_Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar2" />
+        <activity
+            android:name=".Project.Resident.Resident_Signout_No_Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar2" />
+
+        <activity
+            android:name=".Project.CS.CS_Print_Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar1" />
+
+        <activity
+            android:name=".Project.SignOut_complete_Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar1" />
+
+        <activity
+            android:name=".Project.Comman_signout_Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar2" />
+
+        <activity
+            android:name=".Project.SimpleScannerActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar3" />
+
+        <!--................-->
+
+
+        <activity
+            android:name=".Activity_NetPrinterList"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar1" />
+
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar1" />
+
+        <activity
+            android:name=".SetupActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar1" />
+
+
+        <activity
+            android:name=".Splash_Activity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar1">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".MyService"
+            android:enabled="true" />
+
+    </application>
+
+</manifest>

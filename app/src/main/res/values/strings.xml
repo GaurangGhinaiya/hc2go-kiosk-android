@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">KIOSK</string>
+
+    <string name="search_printer">Searching…</string>
+    <string name="end_title">End</string>
+    <string name="end_message">Back to Launcher</string>
+    <string name="close_message">Close Application</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="button_ok">OK</string>
+    <string name="battery_full">Full</string>
+    <string name="battery_middle">Middle</string>
+    <string name="battery_weak">Weak</string>
+    <string name="battery_charge">Need charging</string>
+    <string name="ac_adapter">AC adapter</string>
+    <string name="error_input">wrong input</string>
+    <string name="msg_title_warning">Warning</string>
+    <string name="button_next_print">Next Template</string>
+    <string name="button_refresh">Refresh</string>
+    <string name="button_settings">Settings</string>
+    <string name="no_network_device">No Net Printer Found</string>
+    <string name="netPrinterListTitle_label">Net Printer</string>
+    <string name="close_connect">closeing…</string>
+    <string name="error_message_weong_os">Android OS is not supported</string>
+    <string name="error_message_no_usb">USB device is not found</string>
+    <string name="cancel_printer_msg">Is cancelling, please wait</string>
+    <string name="error_message_none">Succeeded</string>
+    <string name="error_message_runtime">Runtime error occurred </string>
+    <string name="progress_dialog_message_communication_start">Start communication…</string>
+    <string name="bluetooth_printer_list_title_label">Bluetooth Printer</string>
+    <string name="progress_dialog_message_transfer_start">Transfer Start…</string>
+    <string name="progress_dialog_message_preparing_connection">Preparing the connection…</string>
+    <string name="progress_dialog_message_createData">Creating the data</string>
+    <string name="progress_dialog_message_sendingData">Sending the data…</string>
+    <string name="progress_dialog_message_sendingPrintingData">Sending the data…</string>
+    <string name="progress_dialog_message_startPrint">Printing the data </string>
+    <string name="progress_dialog_message_dataSent">The data was sent </string>
+    <string name="progress_dialog_message_printed">The printing process was completed </string>
+    <string name="progress_dialog_message_close_connection">Closing the connection</string>
+    <string name="progress_dialog_message_set_paper">Please Set Paper</string>
+    <string name="progress_dialog_message_cooling_start">Printer cooling start</string>
+    <string name="progress_dialog_message_cooling_end">Printer cooling end</string>
+    <string name="progress_dialog_message_waiting_peel">Wait for peeling label</string>
+    <string name="progress_dialog_message_sending_template">File transferring</string>
+    <string name="progress_dialog_message_getting_bluetooth_setting">Getting Bluetooth settings </string>
+    <string name="progress_dialog_message_setting_bluetooth_setting">Transferring Bluetooth settings </string>
+    <string name="progress_dialog_message_removing_template">Removing templates </string>
+    <string name="progress_dialog_message_getting_template">Getting template list </string>
+
+
+    <string name="bottom">Download <font color='#67B04A'><b>HOMECARE2GO</b></font> App Today To Expedite Your Checkin Experience</string>
+
+
+</resources>
