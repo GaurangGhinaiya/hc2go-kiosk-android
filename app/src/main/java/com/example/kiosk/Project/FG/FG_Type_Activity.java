@@ -41,6 +41,7 @@ public class FG_Type_Activity extends AppCompatActivity {
         });
 
         LinearLayout ll_Next = findViewById(R.id.ll_Next);
+        ll_Next.setVisibility(View.GONE);
         ll_Next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,6 +66,8 @@ public class FG_Type_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 sign_type = 1;
+                Intent i = new Intent(ctx, FG_FirstTime_Activity.class);
+                startActivity(i);
             }
         });
 
@@ -73,6 +76,8 @@ public class FG_Type_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 sign_type = 2;
+                Intent i = new Intent(ctx, FG_Using_PhoneNumber_Activity.class);
+                startActivity(i);
             }
         });
 
@@ -81,6 +86,8 @@ public class FG_Type_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 sign_type = 3;
+                Intent i = new Intent(ctx, SimpleScannerActivity.class);
+                startActivity(i);
             }
         });
 

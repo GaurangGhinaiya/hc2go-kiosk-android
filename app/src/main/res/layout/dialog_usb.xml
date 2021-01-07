@@ -24,28 +24,31 @@
             android:orientation="vertical">
 
 
-            <com.example.kiosk.Utill.TextViewCustomBold
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="5dp"
                 android:gravity="center"
                 android:padding="5dp"
+                android:fontFamily="@font/inter_bold"
                 android:text="Printer Mac-Address"
                 android:textAllCaps="true"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_14sdp" />
+                android:textSize="@dimen/_12sdp" />
 
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_45sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginBottom="@dimen/_10sdp"
-                android:background="@drawable/bg_corners">
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:background="@drawable/bg_trans_blue">
 
 
-                <com.example.kiosk.Utill.EditTextCustom
+                <EditText
                     android:id="@+id/et_Printer_mac_address"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -54,6 +57,7 @@
                     android:layout_marginRight="@dimen/_8sdp"
                     android:background="@android:color/transparent"
                     android:gravity="center"
+                    android:fontFamily="@font/inter_regular"
                     android:hint="Enter your Printer mac-address"
                     android:maxLines="1"
                     android:singleLine="true"
@@ -65,18 +69,18 @@
             </LinearLayout>
 
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="@dimen/_100sdp"
-                android:layout_height="@dimen/_45sdp"
+            <LinearLayout
+                android:layout_width="@dimen/_110sdp"
+                android:layout_height="@dimen/_35sdp"
                 android:layout_gravity="center"
-                android:layout_margin="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
                 android:gravity="center"
                 android:id="@+id/card_save"
-                app:cardBackgroundColor="@color/gray_light"
-                app:cardCornerRadius="@dimen/_1sdp"
-                app:cardElevation="@dimen/_2sdp">
+                android:background="@drawable/bg_green_10"
+               >
 
-                <com.example.kiosk.Utill.TextViewCustomBold
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -84,12 +88,13 @@
                     android:gravity="center"
                     android:padding="5dp"
                     android:text="save"
+                    android:fontFamily="@font/inter_regular"
                     android:textAllCaps="true"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_14sdp" />
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_13sdp" />
 
 
-            </androidx.cardview.widget.CardView>
+            </LinearLayout>
 
         </LinearLayout>
 

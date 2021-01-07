@@ -83,13 +83,13 @@
                                 android:textSize="@dimen/_11sdp" />
 
                             <TextView
+                                android:id="@+id/tv_name"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:layout_weight="1"
-                                android:id="@+id/tv_name"
-                                android:fontFamily="@font/inter_medium"
                                 android:layout_marginLeft="@dimen/_3sdp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/inter_medium"
                                 android:textColor="@color/green"
                                 android:textSize="@dimen/_11sdp" />
 
@@ -128,13 +128,13 @@
                                 android:textSize="@dimen/_11sdp" />
 
                             <TextView
+                                android:id="@+id/tv_MobilePhone"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:layout_weight="1"
                                 android:layout_marginLeft="@dimen/_3sdp"
+                                android:layout_weight="1"
                                 android:fontFamily="@font/inter_medium"
-                                android:id="@+id/tv_MobilePhone"
                                 android:textColor="@color/green"
                                 android:textSize="@dimen/_11sdp" />
 
@@ -174,25 +174,26 @@
 
 
                             <EditText
+                                android:id="@+id/tv_CompanyName"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_weight="1"
-                                android:fontFamily="@font/inter_medium"
                                 android:background="@android:color/transparent"
-                                android:id="@+id/tv_CompanyName"
-                                android:singleLine="true"
+                                android:fontFamily="@font/inter_medium"
+                                android:imeOptions="actionDone"
                                 android:maxLines="1"
-                                android:paddingRight="@dimen/_5sdp"
                                 android:paddingLeft="@dimen/_6sdp"
                                 android:paddingTop="@dimen/_2sdp"
+                                android:paddingRight="@dimen/_5sdp"
                                 android:paddingBottom="@dimen/_2sdp"
-                                android:imeOptions="actionDone"
+                                android:singleLine="true"
                                 android:textColor="@color/green"
                                 android:textSize="@dimen/_11sdp" />
 
 
                             <TextView
+                                android:id="@+id/tv_edit_company_name"
                                 android:layout_width="@dimen/_40sdp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -200,7 +201,6 @@
                                 android:background="@drawable/bg_border_green"
                                 android:fontFamily="@font/inter_regular"
                                 android:gravity="center"
-                                android:id="@+id/tv_edit_company_name"
                                 android:paddingTop="@dimen/_2sdp"
                                 android:paddingBottom="@dimen/_2sdp"
                                 android:text="Edit"
@@ -219,10 +219,10 @@
 
                             <View
                                 android:layout_width="match_parent"
-                                android:background="#707070"
+                                android:layout_height="1dp"
                                 android:layout_marginTop="@dimen/_14sdp"
                                 android:layout_marginBottom="@dimen/_15sdp"
-                                android:layout_height="1dp" />
+                                android:background="#707070" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -241,6 +241,7 @@
                                     android:textSize="@dimen/_13sdp" />
 
                                 <TextView
+                                    android:id="@+id/tv_VehicleInformation"
                                     android:layout_width="@dimen/_40sdp"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
@@ -250,7 +251,6 @@
                                     android:paddingTop="@dimen/_2sdp"
                                     android:paddingBottom="@dimen/_2sdp"
                                     android:text="Edit"
-                                    android:id="@+id/tv_VehicleInformation"
                                     android:textColor="@color/green"
                                     android:textSize="@dimen/_10sdp" />
 
@@ -274,12 +274,12 @@
                                     android:textSize="@dimen/_11sdp" />
 
                                 <TextView
+                                    android:id="@+id/tv_MakeModel"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
                                     android:layout_weight="1"
                                     android:fontFamily="@font/inter_medium"
-                                    android:id="@+id/tv_MakeModel"
                                     android:textColor="@color/green"
                                     android:textSize="@dimen/_11sdp" />
 
@@ -319,13 +319,13 @@
                                     android:textSize="@dimen/_11sdp" />
 
                                 <TextView
+                                    android:id="@+id/tv_Color"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
                                     android:layout_weight="1"
-                                    android:fontFamily="@font/inter_medium"
 
-                                    android:id="@+id/tv_Color"
+                                    android:fontFamily="@font/inter_medium"
                                     android:textColor="@color/green"
                                     android:textSize="@dimen/_11sdp" />
 
@@ -365,12 +365,12 @@
                                     android:textSize="@dimen/_11sdp" />
 
                                 <TextView
+                                    android:id="@+id/tv_LicensePlateNumber"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
                                     android:layout_weight="1"
                                     android:fontFamily="@font/inter_medium"
-                                    android:id="@+id/tv_LicensePlateNumber"
                                     android:textColor="@color/green"
                                     android:textSize="@dimen/_11sdp" />
 
@@ -470,6 +470,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
                         android:fontFamily="@font/muli_regular"
                         android:gravity="center"
                         android:text="@string/bottom"
@@ -506,7 +508,6 @@
             </LinearLayout>
 
         </RelativeLayout>
-
 
 
     </LinearLayout>

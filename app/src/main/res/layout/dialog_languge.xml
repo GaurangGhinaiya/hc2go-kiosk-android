@@ -31,7 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <com.example.kiosk.Utill.TextViewCustom
+                <TextView
                     android:id="@+id/tv_name_dialog"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -39,9 +39,11 @@
                     android:layout_weight="1"
                     android:inputType="text"
                     android:padding="5dp"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:fontFamily="@font/inter_bold"
                     android:text="SELECT TIMEZONE"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_15sdp" />
+                    android:textSize="@dimen/_14sdp" />
 
 
                 <LinearLayout

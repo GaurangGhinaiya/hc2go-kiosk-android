@@ -104,41 +104,40 @@
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:gravity="center"
+                                    android:layout_marginLeft="@dimen/_15sdp"
                                     android:orientation="vertical">
 
                                     <LinearLayout
                                         android:id="@+id/ll_get_temprature"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_marginLeft="@dimen/_60sdp"
-                                        android:layout_marginTop="@dimen/_5sdp"
-                                        android:layout_marginRight="@dimen/_50sdp">
+                                        android:layout_marginTop="@dimen/_5sdp">
 
                                         <ImageView
-                                            android:layout_width="@dimen/_50sdp"
-                                            android:layout_height="@dimen/_50sdp"
+                                            android:layout_width="@dimen/_45sdp"
+                                            android:layout_height="@dimen/_45sdp"
                                             android:layout_gravity="center"
                                             android:elevation="@dimen/_5sdp"
                                             android:src="@drawable/ic_temprature" />
 
                                         <LinearLayout
                                             android:layout_width="match_parent"
-                                            android:layout_height="@dimen/_38sdp"
+                                            android:layout_height="@dimen/_34sdp"
                                             android:layout_gravity="center"
-                                            android:layout_marginLeft="-50dp"
-                                            android:background="@drawable/bg_gray_30">
+                                            android:layout_marginLeft="-40dp"
+                                            android:background="@drawable/bg_gray_30"
+                                            android:gravity="center">
 
 
                                             <LinearLayout
                                                 android:layout_width="match_parent"
-                                                android:layout_height="match_parent"
-                                                android:layout_gravity="center"
-                                                android:gravity="center"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="35dp"
+                                                android:layout_marginRight="10dp"
                                                 android:orientation="vertical">
 
                                                 <TextView
-                                                    android:layout_width="wrap_content"
+                                                    android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
                                                     android:layout_gravity="center"
                                                     android:fontFamily="@font/inter_medium"
@@ -146,18 +145,19 @@
                                                     android:text="CLICK HERE TO"
                                                     android:textAllCaps="true"
                                                     android:textColor="@color/blue"
-                                                    android:textSize="@dimen/_9sdp" />
+                                                    android:textSize="@dimen/_6sdp" />
 
                                                 <TextView
-                                                    android:layout_width="wrap_content"
+                                                    android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
                                                     android:layout_gravity="center"
                                                     android:fontFamily="@font/inter_medium"
                                                     android:gravity="center"
+                                                    android:layout_marginTop="@dimen/_2sdp"
                                                     android:text="GET YOUR TEMPERATURE"
                                                     android:textAllCaps="true"
                                                     android:textColor="@color/blue"
-                                                    android:textSize="@dimen/_9sdp" />
+                                                    android:textSize="@dimen/_6sdp" />
 
                                             </LinearLayout>
 
@@ -169,30 +169,29 @@
                                     <TextView
                                         android:id="@+id/tv_temperature_lablel"
                                         android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
+                                        android:layout_height="wrap_content"
                                         android:layout_gravity="center"
                                         android:layout_marginTop="@dimen/_12sdp"
                                         android:fontFamily="@font/inter_medium"
                                         android:gravity="center"
                                         android:text="TEMPERATURE"
                                         android:textColor="@color/black_0"
-                                        android:textSize="@dimen/_15sdp" />
+                                        android:textSize="@dimen/_13sdp" />
 
 
                                     <TextView
                                         android:id="@+id/tv_temprature"
                                         android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
+                                        android:layout_height="wrap_content"
                                         android:layout_gravity="center"
                                         android:layout_marginTop="@dimen/_8sdp"
                                         android:fontFamily="@font/inter_medium"
                                         android:gravity="center"
                                         android:text=""
                                         android:textColor="@color/green"
-                                        android:textSize="@dimen/_20sdp" />
+                                        android:textSize="@dimen/_17sdp" />
 
                                 </LinearLayout>
-
 
                             </LinearLayout>
 
@@ -279,8 +278,10 @@
                             android:fontFamily="@font/muli_regular"
                             android:gravity="center"
                             android:text="@string/bottom"
-                            android:textColor="@color/black_0"
-                            android:textSize="@dimen/_7sdp" />
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+            android:textColor="@color/black_0"
+            android:textSize="@dimen/_7sdp" />
 
                         <LinearLayout
                             android:layout_width="match_parent"

@@ -80,6 +80,7 @@ public class HPSP_VisitElse_Activity extends AppCompatActivity {
         });
 
         LinearLayout ll_Next = findViewById(R.id.ll_Next);
+        ll_Next.setVisibility(View.GONE);
         ll_Next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -105,6 +106,9 @@ public class HPSP_VisitElse_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 visit_type = 1;
+                Intent i = new Intent(ctx, HPSP_EpartmentDetails_Activity.class);
+                startActivity(i);
+                finish_activity();
             }
         });
 
@@ -112,6 +116,8 @@ public class HPSP_VisitElse_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 visit_type = 2;
+                Intent i = new Intent(ctx, HPSP_VehicelsDetails_Activity.class);
+                startActivity(i);
             }
         });
 

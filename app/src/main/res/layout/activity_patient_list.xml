@@ -29,12 +29,12 @@
                 android:background="@color/blue_light">
 
                 <TextView
+                    android:id="@+id/tv_title_name"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:fontFamily="@font/inter_medium"
                     android:gravity="center"
-                    android:id="@+id/tv_title_name"
                     android:text="Select Patient"
                     android:textColor="@color/blue_black_light"
                     android:textSize="@dimen/_14sdp" />
@@ -98,13 +98,13 @@
 
 
                         <TextView
+                            android:id="@+id/tv_next"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_gravity="center"
                             android:fontFamily="@font/inter_medium"
                             android:gravity="center"
                             android:text="Next"
-                            android:id="@+id/tv_next"
                             android:textColor="@color/white"
                             android:textSize="@dimen/_11sdp" />
 
@@ -123,6 +123,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
                         android:fontFamily="@font/muli_regular"
                         android:gravity="center"
                         android:text="@string/bottom"

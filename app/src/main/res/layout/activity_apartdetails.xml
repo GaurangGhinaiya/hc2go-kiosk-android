@@ -66,17 +66,17 @@
                             android:orientation="vertical">
 
                             <EditText
+                                android:id="@+id/et_apat_room_number"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_gravity="center"
                                 android:background="@android:color/transparent"
                                 android:fontFamily="@font/inter_regular"
                                 android:gravity="center"
-                                android:textSize="@dimen/_11sdp"
-                                android:id="@+id/et_apat_room_number"
                                 android:hint="Enter Apartment or Room Number"
                                 android:textColor="@color/black_0"
-                                android:textColorHint="@color/black_0"/>
+                                android:textColorHint="@color/black_0"
+                                android:textSize="@dimen/_11sdp" />
 
 
                         </LinearLayout>
@@ -154,6 +154,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
                         android:fontFamily="@font/muli_regular"
                         android:gravity="center"
                         android:text="@string/bottom"
@@ -190,7 +192,6 @@
             </LinearLayout>
 
         </RelativeLayout>
-
 
 
     </LinearLayout>

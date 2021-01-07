@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
@@ -595,7 +597,6 @@ public class CS_Print_Activity extends AppCompatActivity {
 
     private void print_wifi(final Bitmap bitmap) {
 
-
         rl_main_print.setVisibility(View.GONE);
         ll_printing_process.setVisibility(View.VISIBLE);
 
@@ -609,98 +610,69 @@ public class CS_Print_Activity extends AppCompatActivity {
             } else {
                 settings.printerModel = PrinterInfo.Model.QL_810W;
             }
-
             if (Printer_Type.equalsIgnoreCase("2")) {
                 settings.port = PrinterInfo.Port.USB;
             } else {
                 settings.port = PrinterInfo.Port.NET;
             }
-
-
             settings.ipAddress = "" + mac_ip_address;
             settings.workPath = getFilesDir().getAbsolutePath();
             // Print Settings
-
             settings.labelNameIndex = LabelInfo.QL700.W62RB.ordinal();
-
             settings.printMode = PrinterInfo.PrintMode.FIT_TO_PAGE;
             settings.paperSize = PrinterInfo.PaperSize.CUSTOM;
-
             settings.isAutoCut = true;
             printer.setPrinterInfo(settings);
 
-            // Connect, then print
 
-//            new Thread(new Runnable() {
-//                @Override
-//                public void run() {
-//                    if (printer.startCommunication()) {
-//                        PrinterStatus result = printer.printImage(bitmap);
-//                        if (result.errorCode != PrinterInfo.ErrorCode.ERROR_NONE) {
-//                            Log.e("TAG", "ERROR - suc" + result.errorCode);
-//                            Toast.makeText(ctx, getString(R.string.error_message_none), Toast.LENGTH_SHORT).show();
-//                        } else {
-//                            Toast.makeText(ctx, "ERROR - " + result, Toast.LENGTH_SHORT).show();
-//                        }
-//                        printer.endCommunication();
-//                    } else {
-//                        PrinterStatus mPrintResult = printer.getPrinterStatus();
-//                        Log.e("TAG", "ERROR - " + mPrintResult.errorCode.toString());
-//                    }
-//                }
-//            }).start();
-
-
-            new Thread() {
+            Thread thread = new Thread(new Runnable() {
+                @Override
                 public void run() {
-                    runOnUiThread(new Runnable() {
-                        public void run() {
-
-
-                            if (printer.startCommunication()) {
-
-
-                                PrinterStatus result = printer.printImage(bitmap);
-                                if (result.errorCode != PrinterInfo.ErrorCode.ERROR_NONE) {
-
-                                    Log.e("TAG", "ERROR - suc" + result.errorCode);
-                                    Toast.makeText(ctx, getString(R.string.error_message_none), Toast.LENGTH_SHORT).show();
-
-                                    Intent i = new Intent(ctx, Print_complete_Activity.class);
-                                    startActivity(i);
-
-                                } else {
-
-                                    rl_main_print.setVisibility(View.VISIBLE);
-                                    ll_printing_process.setVisibility(View.GONE);
-
-                                    Toast.makeText(ctx, "ERROR - " + result, Toast.LENGTH_SHORT).show();
-                                }
-
-                                printer.endCommunication();
-
+                    try {
+                        //Your code goes here
+                        if (printer.startCommunication()) {
+                            PrinterStatus result = printer.printImage(bitmap);
+                            if (result.errorCode != PrinterInfo.ErrorCode.ERROR_NONE) {
+                                Log.e("TAG", "ERROR - suc" + result.errorCode);
+                                Toast.makeText(ctx, getString(R.string.error_message_none), Toast.LENGTH_SHORT).show();
+                                Intent i = new Intent(ctx, Print_complete_Activity.class);
+                                startActivity(i);
                             } else {
-
-                                PrinterStatus mPrintResult = printer.getPrinterStatus();
-                                Log.e("TAG", "ERROR - " + mPrintResult.errorCode.toString());
-                                Toast.makeText(ctx, "ERROR - " + mPrintResult.errorCode.toString(), Toast.LENGTH_SHORT).show();
-
-                                rl_main_print.setVisibility(View.VISIBLE);
-                                ll_printing_process.setVisibility(View.GONE);
-
-
+                                showToast("ERROR - " + result);
                             }
+                            printer.endCommunication();
+                        } else {
+                            PrinterStatus mPrintResult = printer.getPrinterStatus();
+                            Log.e("TAG", "ERROR - " + mPrintResult.errorCode.toString());
+                            showToast("ERROR - " + mPrintResult.errorCode.toString());
                         }
-                    });
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
-            }.start();
+            });
+            thread.start();
+
 
         } catch (Exception e) {
-            Toast.makeText(ctx, "Failed to connect", Toast.LENGTH_SHORT).show();
-            rl_main_print.setVisibility(View.VISIBLE);
-            ll_printing_process.setVisibility(View.GONE);
-
+            showToast("Failed to connect");
         }
+
+    }
+
+
+    public void showToast(final String toast) {
+
+        Handler handler = new Handler(Looper.getMainLooper());
+        handler.post(new Runnable() {
+            public void run() {
+                rl_main_print.setVisibility(View.VISIBLE);
+                ll_printing_process.setVisibility(View.GONE);
+                Toast.makeText(ctx, toast, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
 
     }
 

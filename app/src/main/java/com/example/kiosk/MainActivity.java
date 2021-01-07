@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
         tv_timezone = findViewById(R.id.tv_timezone);
         tv_SELECT_FACILITY = findViewById(R.id.tv_SELECT_FACILITY);
         tv_SELECT_Printer = findViewById(R.id.tv_SELECT_Printer);
-        TextView tv_select_timezone = findViewById(R.id.tv_select_timezone);
+        LinearLayout tv_select_timezone = findViewById(R.id.tv_select_timezone);
         LinearLayout ll_facility = findViewById(R.id.ll_facility);
 
         final EditText et_device_mac_address = findViewById(R.id.et_device_mac_address);
@@ -177,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
                 Window window = dialog_usb.getWindow();
                 window.setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
-                CardView card_save = dialog_usb.findViewById(R.id.card_save);
+                LinearLayout card_save = dialog_usb.findViewById(R.id.card_save);
                 final EditText et_Printer_mac_address = dialog_usb.findViewById(R.id.et_Printer_mac_address);
                 card_save.setOnClickListener(new View.OnClickListener() {
                     @Override

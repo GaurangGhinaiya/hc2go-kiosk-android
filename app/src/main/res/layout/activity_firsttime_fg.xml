@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:mask="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:mask="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="center"
     android:background="@drawable/bg_main"
     android:gravity="center">
@@ -78,11 +78,10 @@
                                 android:hint="Full Name"
                                 android:textColor="@color/black_0"
                                 android:textColorHint="@color/black_0"
-                                android:textSize="@dimen/_11sdp"/>
+                                android:textSize="@dimen/_11sdp" />
 
 
                         </LinearLayout>
-
 
 
                         <LinearLayout
@@ -135,7 +134,7 @@
                                 android:hint="Email ID"
                                 android:textColor="@color/black_0"
                                 android:textColorHint="@color/black_0"
-                                android:textSize="@dimen/_11sdp"/>
+                                android:textSize="@dimen/_11sdp" />
 
 
                         </LinearLayout>
@@ -144,8 +143,8 @@
                             android:id="@+id/ll_Register"
                             android:layout_width="@dimen/_130sdp"
                             android:layout_height="@dimen/_35sdp"
-                            android:layout_margin="@dimen/_10sdp"
                             android:layout_gravity="center"
+                            android:layout_margin="@dimen/_10sdp"
                             android:background="@drawable/bg_green_10">
 
 
@@ -178,8 +177,6 @@
                 android:orientation="vertical">
 
 
-
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -190,6 +187,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
                         android:fontFamily="@font/muli_regular"
                         android:gravity="center"
                         android:text="@string/bottom"

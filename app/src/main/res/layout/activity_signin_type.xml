@@ -189,6 +189,8 @@
             android:fontFamily="@font/muli_regular"
             android:gravity="center"
             android:text="@string/bottom"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
             android:textColor="@color/black_0"
             android:textSize="@dimen/_7sdp" />
 
@@ -199,7 +201,8 @@
             android:layout_marginLeft="@dimen/_10sdp"
             android:layout_marginRight="@dimen/_10sdp"
             android:gravity="center"
-            android:layout_margin="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_1sdp"
             android:orientation="horizontal">
 
             <ImageView
