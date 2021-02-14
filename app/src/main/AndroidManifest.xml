@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.kiosk">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -9,7 +10,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
 
 
     <uses-permission android:name="android.permission.BLUETOOTH" />
@@ -18,6 +19,9 @@
 
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <uses-sdk tools:overrideLibrary="com.google.zxing.client.android" />
+
 
     <application
         android:name=".Myapp"
@@ -28,6 +32,7 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+        android:hardwareAccelerated="true"
         android:usesCleartextTraffic="true">
 
         <uses-library
@@ -203,6 +208,10 @@
 
         <activity
             android:name=".Project.SimpleScannerActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.NoActionBar3" />
+        <activity
+            android:name=".Project.SimpleScannerActivity2"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:theme="@style/AppTheme.NoActionBar3" />
 

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,6 +27,9 @@ public class Splash_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
         ctx = Splash_Activity.this;
          preferences = new Preferences(ctx);
+
+
+
 
         Intent intent = new Intent(Splash_Activity.this, MyService.class);
         startService(intent);
@@ -66,7 +70,7 @@ public class Splash_Activity extends AppCompatActivity {
             @Override
             public void run() {
 
-                if (preferences.getWIFI_USB_PRINTER_id().equalsIgnoreCase("")) {
+                if (preferences.getUnique_id().equalsIgnoreCase("")) {
                     if (preferences.getPRE_DeviceMacAddress().equalsIgnoreCase("")) {
                         Intent i = new Intent(Splash_Activity.this, MainActivity.class);
                         startActivity(i);

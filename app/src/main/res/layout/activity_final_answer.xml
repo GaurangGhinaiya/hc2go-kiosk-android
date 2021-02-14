@@ -103,7 +103,7 @@
                             android:layout_gravity="center"
                             android:fontFamily="@font/inter_medium"
                             android:gravity="center"
-                            android:text="Changes"
+                            android:text="Edit Answer"
                             android:textColor="@color/white"
                             android:textSize="@dimen/_11sdp" />
 

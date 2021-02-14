@@ -7,11 +7,11 @@ public class GlobalServiceApi {
 //    http : 8484
 
 
-    public static String PRINT_URL = "https://paladion.dolphin-products.com/paladion/api/v1/get-last-data/";
+  public static String PRINT_URL = "https://paladion.dolphin-products.com/paladion/api/v1/get-last-data/";
 
 
- //  public static String MAIN_URL = "http://192.168.29.162:1234";
-     public static String MAIN_URL = "http://kiosk.homecare2go.com";
+  // public static String MAIN_URL = "http://192.168.29.162:2345";
+      public static String MAIN_URL = "http://kiosk.homecare2go.com";
 
 
     public static String BASEURL = MAIN_URL + "/Api/v1/";
@@ -52,6 +52,9 @@ public class GlobalServiceApi {
 
     public static String API_add_family_guest_info = BASEURL + "add-family-guest-info";
     public static String API_check_family_guest_phonenumber = BASEURL + "check-family-guest-phonenumber";
+    public static String API_get_homecare_pass = BASEURL + "get-homecare-pass";
+    public static String API_add_branch_wise_device = BASEURL + "add-branch-wise-device";
+    public static String API_get_branch_wise_device = BASEURL + "get-branch-wise-device/";
 
 
 //      define('USER_TYPE_APP_HEALTHCARE_PROVIDER', 1);

@@ -14,6 +14,7 @@ import androidx.cardview.widget.CardView;
 
 import com.example.kiosk.API.GlobalServiceApi;
 import com.example.kiosk.Project.SimpleScannerActivity;
+import com.example.kiosk.Project.SimpleScannerActivity2;
 import com.example.kiosk.R;
 import com.example.kiosk.Utill.Preferences;
 
@@ -96,7 +97,9 @@ public class HPSP_Type_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 sign_type = 3;
-                Intent i = new Intent(ctx, SimpleScannerActivity.class);
+                Intent i = new Intent(ctx, SimpleScannerActivity2.class);
+
+              //  Intent i = new Intent(ctx, SimpleScannerActivity.class);
                 startActivity(i);
             }
         });
@@ -106,6 +109,8 @@ public class HPSP_Type_Activity extends AppCompatActivity {
     @Override
     protected void onResume() {
         preferences.setHomecarePassQList("");
+        preferences.setHomecarePassANSList("");
+        preferences.setIS_Homecare_Pass("");
         super.onResume();
     }
 }

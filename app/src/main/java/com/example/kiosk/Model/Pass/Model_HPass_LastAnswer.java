@@ -13,9 +13,11 @@ public class Model_HPass_LastAnswer {
     @SerializedName("user_id")
     @Expose
     private Integer userId;
+
     @SerializedName("answer")
     @Expose
     private List<Model_HPass_Answer> answer = null;
+
     @SerializedName("date")
     @Expose
     private String date;

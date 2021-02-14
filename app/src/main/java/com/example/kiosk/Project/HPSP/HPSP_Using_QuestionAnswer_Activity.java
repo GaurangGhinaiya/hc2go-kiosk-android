@@ -19,6 +19,7 @@ import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.StringRequestListener;
 import com.example.kiosk.API.GlobalServiceApi;
 
+import com.example.kiosk.Model.Pass.Model_HPass_Answer;
 import com.example.kiosk.Model.QuestionsAnswer.Model_QA_CovidQuestion;
 import com.example.kiosk.Model.QuestionsAnswer.Model_QA_Only_Response;
 
@@ -156,10 +157,31 @@ public class HPSP_Using_QuestionAnswer_Activity extends AppCompatActivity {
 
         if ((Que_POS >= list_services_temp_move.size())) {
 
+            List<Model_QA_CovidQuestion> list_temp_move = new ArrayList<>();
+            list_temp_move.addAll(list_services_temp_move);
+
+            if (preferences.getIS_Homecare_Pass().equalsIgnoreCase("true")) {
+                if (!preferences.getHomecarePassANSList().equalsIgnoreCase("")) {
+                    List<Model_HPass_Answer> list_services_temp = new ArrayList<>();
+                    String arraylist_a = "" + preferences.getHomecarePassANSList();
+                    Type listType = new TypeToken<List<Model_HPass_Answer>>() {
+                    }.getType();
+                    list_services_temp = new Gson().fromJson(arraylist_a, listType);
+                    for (int i = 0; i < list_services_temp.size(); i++) {
+                        Model_QA_CovidQuestion model_qa_covidQuestion = new Model_QA_CovidQuestion();
+                        model_qa_covidQuestion.setQuestionType("" + list_services_temp.get(i).getQuestionType());
+                        model_qa_covidQuestion.setPlainQuestion("" + list_services_temp.get(i).getPlainQuestion());
+                        model_qa_covidQuestion.setId(list_services_temp.get(i).getid());
+                        model_qa_covidQuestion.answer = "" + list_services_temp.get(i).getAnswer();
+                        list_temp_move.add(model_qa_covidQuestion);
+                    }
+                }
+            }
+
 
             Intent i = new Intent(ctx, CS_FinalAnswer_Activity.class);
             Bundle bundle = new Bundle();
-            bundle.putString("arraylist_QA", new Gson().toJson(list_services_temp_move));
+            bundle.putString("arraylist_QA", new Gson().toJson(list_temp_move));
             i.putExtras(bundle);
             startActivity(i);
 
@@ -203,11 +225,64 @@ public class HPSP_Using_QuestionAnswer_Activity extends AppCompatActivity {
         ll_back.setVisibility(View.GONE);
 
 
-
         if (!preferences.getHomecarePassQList().equalsIgnoreCase("")) {
-            method_get_agency_list_after_8hours(preferences.getHomecarePassQList());
+
+            List<Model_HPass_Answer> list_services_temp = new ArrayList<>();
+            String arraylist_a = "" + preferences.getHomecarePassQList();
+            Type listType = new TypeToken<List<Model_HPass_Answer>>() {
+            }.getType();
+
+
+            list_services_temp = new Gson().fromJson(arraylist_a, listType);
+
+
+            list_services_temp_move = new ArrayList<>();
+            for (int i = 0; i < list_services_temp.size(); i++) {
+
+                Model_QA_CovidQuestion model_qa_covidQuestion = new Model_QA_CovidQuestion();
+                model_qa_covidQuestion.setQuestionType("" + list_services_temp.get(i).getQuestionType());
+                model_qa_covidQuestion.setPlainQuestion("" + list_services_temp.get(i).getPlainQuestion());
+                model_qa_covidQuestion.setId(list_services_temp.get(i).getid());
+
+                list_services_temp_move.add(model_qa_covidQuestion);
+            }
+
+
+            method_first_time();
+
         } else {
-            method_get_agency_list();
+
+            if (preferences.getIS_Homecare_Pass().equalsIgnoreCase("true")) {
+                List<Model_QA_CovidQuestion> list_temp_move = new ArrayList<>();
+                list_temp_move.addAll(list_services_temp_move);
+
+                if (!preferences.getHomecarePassANSList().equalsIgnoreCase("")) {
+                    List<Model_HPass_Answer> list_services_temp = new ArrayList<>();
+                    String arraylist_a = "" + preferences.getHomecarePassANSList();
+                    Type listType = new TypeToken<List<Model_HPass_Answer>>() {
+                    }.getType();
+                    list_services_temp = new Gson().fromJson(arraylist_a, listType);
+                    for (int i = 0; i < list_services_temp.size(); i++) {
+                        Model_QA_CovidQuestion model_qa_covidQuestion = new Model_QA_CovidQuestion();
+                        model_qa_covidQuestion.setQuestionType("" + list_services_temp.get(i).getQuestionType());
+                        model_qa_covidQuestion.setPlainQuestion("" + list_services_temp.get(i).getPlainQuestion());
+                        model_qa_covidQuestion.setId(list_services_temp.get(i).getid());
+                        model_qa_covidQuestion.answer = "" + list_services_temp.get(i).getAnswer();
+                        list_temp_move.add(model_qa_covidQuestion);
+                    }
+                }
+
+                Intent i = new Intent(ctx, CS_FinalAnswer_Activity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("arraylist_QA", new Gson().toJson(list_temp_move));
+                i.putExtras(bundle);
+                startActivity(i);
+                finish();
+
+            } else {
+                method_get_agency_list();
+            }
+
         }
 
 
@@ -216,6 +291,7 @@ public class HPSP_Using_QuestionAnswer_Activity extends AppCompatActivity {
 
 
     Dialog progressDialog = null;
+
     private void method_get_agency_list() {
         if (utills.isOnline(ctx)) {
             progressDialog = utills.startLoader(ctx);
@@ -243,9 +319,9 @@ public class HPSP_Using_QuestionAnswer_Activity extends AppCompatActivity {
                                         list_services_temp = agency_responce.getData();
                                         if (list_services_temp.size() > 0) {
 
-                                                list_services_temp_move = new ArrayList<>();
-                                                list_services_temp_move.addAll(list_services_temp);
-                                                method_first_time();
+                                            list_services_temp_move = new ArrayList<>();
+                                            list_services_temp_move.addAll(list_services_temp);
+                                            method_first_time();
 
 
                                         }
@@ -270,7 +346,6 @@ public class HPSP_Using_QuestionAnswer_Activity extends AppCompatActivity {
 
         }
     }
-
 
 
     private void method_get_agency_list_after_8hours(String homecarePassQList) {
@@ -334,7 +409,6 @@ public class HPSP_Using_QuestionAnswer_Activity extends AppCompatActivity {
 
         }
     }
-
 
 
 //    private void method_setdata(List<Model_QA_CovidQuestion> list_kiosk_temp, String homecarePassQList) {

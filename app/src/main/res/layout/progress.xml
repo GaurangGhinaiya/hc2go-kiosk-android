@@ -9,12 +9,18 @@
     android:paddingLeft="35dp"
     android:paddingRight="35dp">
 
-    <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/gif_anim"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:src="@drawable/wellcareloader"/>
+    <!--    <pl.droidsonroids.gif.GifImageView-->
+    <!--        android:id="@+id/gif_anim"-->
+    <!--        android:layout_width="100dp"-->
+    <!--        android:layout_height="100dp"-->
+    <!--        android:layout_gravity="center"-->
+    <!--        android:src="@drawable/wellcareloader"/>-->
+
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/colorPrimary" />
 
 
 </LinearLayout>

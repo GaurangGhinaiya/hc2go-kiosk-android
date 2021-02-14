@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -26,6 +27,8 @@ import com.google.gson.Gson;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import static android.view.inputmethod.InputMethodManager.HIDE_IMPLICIT_ONLY;
 
 
 public class HPSP_FirstTime_Activity extends AppCompatActivity {
@@ -64,7 +67,13 @@ public class HPSP_FirstTime_Activity extends AppCompatActivity {
             }
         });
 
-
+        LinearLayout ll_main = findViewById(R.id.ll_main);
+        ll_main.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                hideKeyboard();
+            }
+        });
     }
 
 
@@ -135,6 +144,10 @@ public class HPSP_FirstTime_Activity extends AppCompatActivity {
         }
     }
 
+    public void hideKeyboard() {
+        InputMethodManager imm = (InputMethodManager) ctx.getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.toggleSoftInput(HIDE_IMPLICIT_ONLY, 0);
 
+    }
 
 }

@@ -53,6 +53,12 @@ public class CS_FinalAnswer_Activity extends AppCompatActivity {
         Rv_ActivePatient = findViewById(R.id.Rv_ActivePatient);
 
         LinearLayout ll_Changes = findViewById(R.id.ll_Changes);
+        if (preferences.getIS_Homecare_Pass().equalsIgnoreCase("true")) {
+            if (preferences.getHomecarePassQList().equalsIgnoreCase("")) {
+                ll_Changes.setVisibility(View.GONE);
+            }
+        }
+
         ll_Changes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

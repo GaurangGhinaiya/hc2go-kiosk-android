@@ -40,17 +40,21 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.kiosk.API.GlobalServiceApi;
 import com.example.kiosk.Model.Model_Facility_Data;
 import com.example.kiosk.Model.Model_Facility_Response;
+import com.example.kiosk.Model.RoomEmpart_Details.Model_RoomEmpartDetails_Data;
 import com.example.kiosk.Project.SignInOut_Activity;
 import com.example.kiosk.Utill.Preferences;
 import com.example.kiosk.Utill.utills;
 import com.example.kiosk.common.Common;
 import com.example.kiosk.printprocess.PrinterModelInfo;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.PrintWriter;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -135,8 +139,8 @@ public class MainActivity extends AppCompatActivity {
                     preferences.setPRE_DeviceName("" + et_devicename.getText().toString());
 
 
-                    Intent i = new Intent(MainActivity.this, SignInOut_Activity.class);
-                    startActivity(i);
+                    method_register("" + et_device_mac_address.getText().toString(), "" + et_devicename.getText().toString());
+
 
                 }
             }
@@ -367,6 +371,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     Dialog Dialog_Printer;
+
     private void method_dialog_Printer() {
 
         Dialog_Printer = new Dialog(this);
@@ -455,7 +460,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             });
-
 
 
             return view;
@@ -674,6 +678,63 @@ public class MainActivity extends AppCompatActivity {
 //        }
 //
 //    }
+
+
+    private void method_register(String et_device_mac_address, String et_devicename) {
+        if (utills.isOnline(context)) {
+            progressDialog = utills.startLoader(context);
+
+            AndroidNetworking.post(GlobalServiceApi.API_add_branch_wise_device)
+                    .addBodyParameter("branch_id", "" + preferences.getBranchid())
+                    .addBodyParameter("company_id", "" + preferences.getCompany_id())
+                    .addBodyParameter("device_mac_address", "" + et_device_mac_address)
+                    .addBodyParameter("device_name", "" + et_devicename)
+                    .addBodyParameter("printer_name", "" + preferences.getPrinter_MODEL())
+                    .addBodyParameter("timezone", "" + TIMEZONE)
+                    .build()
+                    .getAsString(new StringRequestListener() {
+                        @Override
+                        public void onResponse(String result) {
+                            utills.stopLoader(progressDialog);
+                            Log.e("result", result);
+                            if (result == null || result == "") return;
+                            try {
+                                JSONObject jsonObject = new JSONObject(result);
+                                String flag = jsonObject.getString("flag");
+                                String message = jsonObject.getString("message");
+                                if (flag.equalsIgnoreCase("true")) {
+
+                                    JSONObject jsondata = jsonObject.getJSONObject("data");
+                                    String Unique_id = "" + jsondata.getString("id");
+                                    preferences.setUnique_id("" +Unique_id);
+
+                                    JSONObject jsoncompany = jsondata.getJSONObject("company");
+                                    String profile_pic = "" + jsoncompany.getString("profile_pic");
+                                    preferences.setFACILITY( "" + Image_url + "" + profile_pic);
+
+                                    Intent i = new Intent(MainActivity.this, SignInOut_Activity.class);
+                                    startActivity(i);
+                                    finish();
+
+                                } else {
+                                    Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+                                }
+
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+
+                        @Override
+                        public void onError(ANError anError) {
+                            utills.stopLoader(progressDialog);
+                            Log.d("API", anError.toString());
+                        }
+                    });
+
+
+        }
+    }
 
 
 }

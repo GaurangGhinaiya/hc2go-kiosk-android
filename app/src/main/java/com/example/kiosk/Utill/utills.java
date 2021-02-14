@@ -10,6 +10,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.RectF;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
@@ -25,6 +26,7 @@ import android.view.animation.Animation;
 import android.view.animation.Interpolator;
 import android.view.animation.OvershootInterpolator;
 import android.view.animation.ScaleAnimation;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import androidx.core.app.ActivityCompat;
@@ -120,7 +122,7 @@ public class utills {
     }
 
 
-    public static Bitmap getBitmapFromView(View view, int height, int width) {
+    public static Bitmap getBitmapFromView2(View view, int height, int width) {
         Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap);
         Drawable bgDrawable = view.getBackground();
@@ -133,6 +135,39 @@ public class utills {
         view.draw(canvas);
         return bitmap;
     }
+
+
+    public static Bitmap getBitmapFromView(View v, int height_, int width_) {
+        v.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,
+                RelativeLayout.LayoutParams.MATCH_PARENT));
+        Bitmap bitmap = Bitmap.createBitmap(v.getMeasuredWidth(),
+                v.getMeasuredHeight(),
+                Bitmap.Config.ARGB_8888);
+        Canvas c = new Canvas(bitmap);
+        v.draw(c);
+
+
+        int newWidth = 1000;
+        int newHeight = height_;
+
+
+        int sourceWidth = bitmap.getWidth();
+        int sourceHeight = bitmap.getHeight();
+        float xScale = (float) newWidth / sourceWidth;
+        float yScale = (float) newHeight / sourceHeight;
+        float scale = Math.max(xScale, yScale);
+        float scaledWidth = scale * sourceWidth;
+        float scaledHeight = scale * sourceHeight;
+        float left = (newWidth - scaledWidth) / 2;
+        float top = (newHeight - scaledHeight) / 2;
+        RectF targetRect = new RectF(left, top, left + scaledWidth, top + scaledHeight);
+        Bitmap dest = Bitmap.createBitmap(newWidth, newHeight, bitmap.getConfig());
+        Canvas canvas = new Canvas(dest);
+        canvas.drawBitmap(bitmap, null, targetRect, null);
+
+        return dest;
+    }
+
 
 
     public static Dialog stopLoader(final Dialog d) {

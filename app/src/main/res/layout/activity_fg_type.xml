@@ -139,8 +139,8 @@
                                     android:layout_height="@dimen/_34sdp"
                                     android:layout_gravity="center"
                                     android:layout_marginLeft="@dimen/_8sdp"
-                                    android:src="@drawable/h2go_kiosk"
-                                    app:tint="@color/white" />
+                                    android:src="@drawable/ic_h2go_pass"
+                                   />
 
                             </LinearLayout>
 

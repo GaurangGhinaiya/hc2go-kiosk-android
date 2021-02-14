@@ -224,8 +224,7 @@ public class R_OnlySignIN_Activity extends AppCompatActivity {
                     .addBodyParameter("branch_id", "" + preferences.getBranchid())
                     .addBodyParameter("company_id", "" + preferences.getCompany_id())
                     .addBodyParameter("user_id", "" + preferences.getUser_Id())
-                    .addBodyParameter("device_name", "" + preferences.getPRE_DeviceName())
-                    .addBodyParameter("ip", "" + preferences.getPRE_DeviceMacAddress())
+                    .addBodyParameter("device_id", "" + preferences.getUnique_id())
                     .addBodyParameter("signin", "" + gmtTime) //date
                     .addBodyParameter("type", "" + type)
                     .addBodyParameter("covid_answer", "" + array)

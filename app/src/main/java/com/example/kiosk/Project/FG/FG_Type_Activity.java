@@ -13,6 +13,7 @@ import androidx.cardview.widget.CardView;
 import com.example.kiosk.Project.HPSP.HPSP_FirstTime_Activity;
 import com.example.kiosk.Project.HPSP.HPSP_Using_PhoneNumber_Activity;
 import com.example.kiosk.Project.SimpleScannerActivity;
+import com.example.kiosk.Project.SimpleScannerActivity2;
 import com.example.kiosk.R;
 import com.example.kiosk.Utill.Preferences;
 
@@ -86,7 +87,7 @@ public class FG_Type_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 sign_type = 3;
-                Intent i = new Intent(ctx, SimpleScannerActivity.class);
+                Intent i = new Intent(ctx, SimpleScannerActivity2.class);
                 startActivity(i);
             }
         });
@@ -97,6 +98,8 @@ public class FG_Type_Activity extends AppCompatActivity {
     @Override
     protected void onResume() {
         preferences.setHomecarePassQList("");
+        preferences.setHomecarePassANSList("");
+        preferences.setIS_Homecare_Pass("");
         super.onResume();
     }
 }

@@ -41,9 +41,9 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:paddingLeft="@dimen/_13sdp"
-                        android:paddingTop="@dimen/_13sdp"
+                        android:paddingTop="@dimen/_7sdp"
                         android:paddingRight="@dimen/_13sdp"
-                        android:paddingBottom="@dimen/_6sdp">
+                        android:paddingBottom="@dimen/_4sdp">
 
 
                         <LinearLayout
@@ -147,18 +147,18 @@
                                 android:background="@drawable/bg_gray"
                                 android:fontFamily="@font/inter_bold"
                                 android:gravity="center"
-                                android:paddingTop="@dimen/_7sdp"
-                                android:paddingBottom="@dimen/_7sdp"
+                                android:paddingTop="@dimen/_5sdp"
+                                android:paddingBottom="@dimen/_5sdp"
                                 android:text="Staff"
                                 android:textAllCaps="true"
                                 android:textColor="@color/black"
-                                android:textSize="@dimen/_9sdp" />
+                                android:textSize="@dimen/_8sdp" />
 
                             <ImageView
                                 android:id="@+id/iv_facility_image"
                                 android:layout_width="wrap_content"
                                 android:layout_marginRight="@dimen/_15sdp"
-                                android:layout_height="@dimen/_70sdp"
+                                android:layout_height="@dimen/_60sdp"
                                 android:layout_gravity="center"
                                 android:layout_marginLeft="@dimen/_15sdp" />
 
@@ -168,8 +168,8 @@
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_3sdp"
+                            android:layout_marginBottom="@dimen/_3sdp"
                             android:background="#000000" />
 
 
@@ -195,8 +195,8 @@
                                     android:layout_gravity="center"
                                     android:background="@drawable/bg_gray"
                                     android:gravity="center"
-                                    android:paddingTop="@dimen/_7sdp"
-                                    android:paddingBottom="@dimen/_7sdp">
+                                    android:paddingTop="@dimen/_5sdp"
+                                    android:paddingBottom="@dimen/_5sdp">
 
                                     <TextView
                                         android:layout_width="wrap_content"
@@ -207,11 +207,11 @@
                                         android:text="Verified By"
                                         android:textAllCaps="true"
                                         android:textColor="@color/black"
-                                        android:textSize="@dimen/_9sdp" />
+                                        android:textSize="@dimen/_8sdp" />
 
                                     <ImageView
-                                        android:layout_width="@dimen/_15sdp"
-                                        android:layout_height="@dimen/_15sdp"
+                                        android:layout_width="@dimen/_14sdp"
+                                        android:layout_height="@dimen/_14sdp"
                                         android:layout_marginLeft="@dimen/_5sdp"
                                         android:src="@drawable/ic_verify" />
 
@@ -229,7 +229,7 @@
 
                                 <ImageView
                                     android:layout_width="match_parent"
-                                    android:layout_height="@dimen/_70sdp"
+                                    android:layout_height="@dimen/_60sdp"
                                     android:layout_gravity="center"
                                     android:src="@drawable/h2go_kiosk" />
 
@@ -242,11 +242,10 @@
                     </LinearLayout>
 
 
-                    <View
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_7sdp"
-                        android:background="#319EB9" />
-
+                        android:background="@drawable/bg_bottom_15" />
 
                 </LinearLayout>
 

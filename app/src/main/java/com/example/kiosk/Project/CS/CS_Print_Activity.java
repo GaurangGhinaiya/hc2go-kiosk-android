@@ -246,8 +246,7 @@ public class CS_Print_Activity extends AppCompatActivity {
                     .addBodyParameter("branch_id", "" + preferences.getBranchid())
                     .addBodyParameter("company_id", "" + preferences.getCompany_id())
                     .addBodyParameter("user_id", "" + preferences.getUser_Id())
-                    .addBodyParameter("device_name", "" + preferences.getPRE_DeviceName())
-                    .addBodyParameter("ip", "" + preferences.getPRE_DeviceMacAddress())
+                    .addBodyParameter("device_id", "" + preferences.getUnique_id())
                     .addBodyParameter("signin", "" + gmtTime) //date
                     .addBodyParameter("type", "" + type)
                     .addBodyParameter("covid_answer", "" + array)
@@ -347,8 +346,7 @@ public class CS_Print_Activity extends AppCompatActivity {
                     .addBodyParameter("branch_id", "" + preferences.getBranchid())
                     .addBodyParameter("company_id", "" + preferences.getCompany_id())
                     .addBodyParameter("user_id", "" + preferences.getUser_Id())
-                    .addBodyParameter("device_name", "" + preferences.getPRE_DeviceName())
-                    .addBodyParameter("ip", "" + preferences.getPRE_DeviceMacAddress())
+                    .addBodyParameter("device_id", "" + preferences.getUnique_id())
                     .addBodyParameter("signin", "" + gmtTime) //date
                     .addBodyParameter("type", "" + type)
                     .addBodyParameter("covid_answer", "" + array)
@@ -453,8 +451,7 @@ public class CS_Print_Activity extends AppCompatActivity {
                     .addBodyParameter("branch_id", "" + preferences.getBranchid())
                     .addBodyParameter("company_id", "" + preferences.getCompany_id())
                     .addBodyParameter("user_id", "" + preferences.getUser_Id())
-                    .addBodyParameter("device_name", "" + preferences.getPRE_DeviceName())
-                    .addBodyParameter("ip", "" + preferences.getPRE_DeviceMacAddress())
+                    .addBodyParameter("device_id", "" + preferences.getUnique_id())
                     .addBodyParameter("signin", "" + gmtTime) //date
                     .addBodyParameter("type", "" + type)
                     .addBodyParameter("covid_answer", "" + array)
@@ -618,9 +615,12 @@ public class CS_Print_Activity extends AppCompatActivity {
             settings.ipAddress = "" + mac_ip_address;
             settings.workPath = getFilesDir().getAbsolutePath();
             // Print Settings
-            settings.labelNameIndex = LabelInfo.QL700.W62RB.ordinal();
+
+            settings.labelNameIndex = LabelInfo.QL700.W62.ordinal();
             settings.printMode = PrinterInfo.PrintMode.FIT_TO_PAGE;
             settings.paperSize = PrinterInfo.PaperSize.CUSTOM;
+            settings.orientation=PrinterInfo.Orientation.LANDSCAPE;
+
             settings.isAutoCut = true;
             printer.setPrinterInfo(settings);
 
@@ -633,12 +633,9 @@ public class CS_Print_Activity extends AppCompatActivity {
                         if (printer.startCommunication()) {
                             PrinterStatus result = printer.printImage(bitmap);
                             if (result.errorCode != PrinterInfo.ErrorCode.ERROR_NONE) {
-                                Log.e("TAG", "ERROR - suc" + result.errorCode);
-                                Toast.makeText(ctx, getString(R.string.error_message_none), Toast.LENGTH_SHORT).show();
-                                Intent i = new Intent(ctx, Print_complete_Activity.class);
-                                startActivity(i);
-                            } else {
                                 showToast("ERROR - " + result);
+                            } else {
+                                showToast_next("ERROR - " + result);
                             }
                             printer.endCommunication();
                         } else {
@@ -658,6 +655,19 @@ public class CS_Print_Activity extends AppCompatActivity {
             showToast("Failed to connect");
         }
 
+    }
+
+    private void showToast_next(final String toast) {
+
+        Handler handler = new Handler(Looper.getMainLooper());
+        handler.post(new Runnable() {
+            public void run() {
+                Log.e("TAG", toast);
+                Intent i = new Intent(ctx, Print_complete_Activity.class);
+                startActivity(i);
+                Toast.makeText(ctx, getString(R.string.error_message_none), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 

@@ -84,6 +84,13 @@ public class Preferences {
         return pref.getString("company_id", "");
     }
 
+    public void setUnique_id(String link) {
+        pref.edit().putString("Unique_id", link).commit(); }
+    public String getUnique_id() {
+        return pref.getString("Unique_id", "");
+    }
+
+
     /*......................................*/
 
     public void setUser_Id(String link) {
@@ -160,6 +167,16 @@ public class Preferences {
         return pref.getString("HomecarePassQList", "");
     }
 
+    public void setHomecarePassANSList(String link) {
+        pref.edit().putString("HomecarePassANSList", link).commit(); }
+    public String getHomecarePassANSList() {
+        return pref.getString("HomecarePassANSList", "");
+    }
 
+    public void setIS_Homecare_Pass(String link) {
+        pref.edit().putString("IS_Homecare_Pass", link).commit(); }
+    public String getIS_Homecare_Pass() {
+        return pref.getString("IS_Homecare_Pass", "");
+    }
 
 }
